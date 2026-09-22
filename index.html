@@ -80,21 +80,24 @@
     <h2>What we collect</h2>
     <p>We keep the minimum needed to run a rewards economy fairly:</p>
     <ul>
-      <li>An <strong>anonymous account ID</strong> created by Firebase Authentication the first time you open the app. It is not linked to your name, email address or phone number.</li>
+      <li>An <strong>account ID</strong> created by Firebase Authentication the first time you open the app. You start as a guest: this ID is not linked to your name, email address or phone number.</li>
+      <li>Your <strong>email address and sign-in method</strong>, only if you choose to sign in with Google or with email and password. Signing in is optional and only needed to redeem rewards. With Google sign-in, Google shares your email address with us. We never receive your Google password.</li>
       <li>Your <strong>display name and avatar</strong>, if you set one.</li>
       <li>Your <strong>Coin balance, lifetime totals, daily streak and reward history</strong>.</li>
       <li>A record of <strong>each reward you claim and each game session you complete</strong>, including score and duration. These stop the same reward being paid twice and help us detect automated play.</li>
       <li><strong>Redemption requests</strong>, including the username you provide for delivery.</li>
       <li>Your <strong>reminder preferences</strong>.</li>
+      <li>A <strong>push notification token</strong> for your device (Firebase Cloud Messaging), so we can send you notifications. It identifies the app on your device, not you personally.</li>
       <li>Standard <strong>app analytics and crash reports</strong> (app version, device model, OS version, and which screens and events occurred).</li>
       <li>Your <strong>ad consent choice</strong>, stored on your device by Google's User Messaging Platform.</li>
     </ul>
 
     <h2>What we do not collect</h2>
     <p>
-      We do not ask for your real name, email address, phone number, postal address,
-      contacts, photos, precise location, or payment details. We do not collect your
-      Roblox password, and we will never ask you for it.
+      We do not ask for your real name, phone number, postal address, contacts, photos,
+      precise location, or payment details. Your email address is collected only if you
+      choose to sign in. We do not collect your Roblox password, and we will never ask
+      you for it.
     </p>
 
     <h2>Why we collect it</h2>
@@ -103,6 +106,8 @@
       <li>To decide fairly whether a reward is due, which requires server-side records of what you have already claimed.</li>
       <li>To detect and prevent fraud and automated play, which protects the rewards available to everyone else.</li>
       <li>To deliver a redemption you requested.</li>
+      <li>To let you recover your account and Coins on a new phone or after reinstalling, if you signed in.</li>
+      <li>To send the reminders and notifications you have switched on.</li>
       <li>To fix crashes and improve the app.</li>
     </ul>
 
@@ -129,8 +134,9 @@
       own policies</a> and your device's ad settings.
     </p>
     <p>
-      Rewarded videos are always optional. You can earn Coins from every other activity in the
-      app without watching a single ad.
+      Rewarded videos are always optional and <strong>never pay Coins</strong>. They only
+      unlock extra play, such as an instant rematch or a second chance in a game. You can
+      earn every Coin in the app without watching a single ad.
     </p>
 
     <h2>Consent</h2>
@@ -153,6 +159,35 @@
       </p>
     </div>
 
+    <h2>Notifications</h2>
+    <ul>
+      <li><strong>Daily reminders</strong> (daily reward, today's leaderboard, missions and streak)
+        are scheduled on your device itself. Scheduling them sends no data to us.</li>
+      <li><strong>Push notifications</strong> are sent through Firebase Cloud Messaging using the
+        push token described above.</li>
+      <li>You can switch each reminder off in <strong>Profile → Reminders</strong>, or turn off all
+        notifications for the app in your device settings.</li>
+    </ul>
+
+    <h2>Permissions the app uses</h2>
+    <p>The only permission the app asks you for directly is notifications. The rest are standard
+      permissions granted at install, mostly declared by Google's libraries.</p>
+    <ul>
+      <li><strong>Notifications</strong>: to show reminders and push notifications. Asked on
+        Android 13 and later, and you can refuse. The app works fully without it.</li>
+      <li><strong>Internet and network state</strong>: every reward is checked by our servers.</li>
+      <li><strong>Run at startup</strong>: to restore your scheduled reminders after the phone
+        restarts or the app updates.</li>
+      <li><strong>Advertising ID and ad services</strong>: used by Google AdMob to serve and
+        measure ads, as described under Advertising.</li>
+      <li><strong>Receive push messages, wake lock and vibrate</strong>: used by Firebase Cloud
+        Messaging and the notification system to deliver notifications.</li>
+      <li><strong>Biometric (declared by Google's sign-in library)</strong>: the app does not
+        use your fingerprint or face.</li>
+    </ul>
+    <p>The app does <strong>not</strong> request your location, camera, microphone, contacts,
+      photos, or files.</p>
+
     <h2>Children</h2>
     <p>
       This app is designed to be safe for a general audience and does not request personal
@@ -174,6 +209,7 @@
     </p>
     <p>
       When an account is deleted, we delete the associated profile information, your
+      sign-in account and email address (if you signed in), your push token, your
       Coin balance, your account and earning history, your streak and mission progress,
       your game records, and other account-linked data, except information we may need
       to retain for fraud prevention, security, legal, or regulatory purposes.
@@ -194,7 +230,8 @@
 
     <h2>Your other choices</h2>
     <ul>
-      <li>You can switch off every reminder in the app.</li>
+      <li>You can switch off every reminder in the app, or all notifications in your device settings.</li>
+      <li>You can play as a guest and never share an email address.</li>
       <li>You can reset the advertising identifier in your device settings.</li>
       <li>You can request a copy of your data by emailing us.</li>
     </ul>
